@@ -8,5 +8,14 @@ public class Main {
 
             System.out.println("i:"+i);
         }
+        System.out.println("for dongusu bitti");
+
+        //while
+        int i=1;
+        while (i<=10){
+            System.out.println("i:"+i);
+            i+=2;
+        }
+        System.out.println("While dongusu bitti");
     }
 }
