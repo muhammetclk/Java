@@ -4,7 +4,7 @@ public class Main {
         String mesaj="Bugun hava cok guzel.";
 
         System.out.println(mesaj);
-        System.out.println("Karakter sayisi:"+mesaj.length());
+       /* System.out.println("Karakter sayisi:"+mesaj.length());
         System.out.println("5. eleman:"+mesaj.charAt(4));
         System.out.println(mesaj.concat(" Yasasin !"));
 
@@ -17,6 +17,18 @@ public class Main {
 
         System.out.println(mesaj.indexOf("a")); //ilk bulunan karakterin indeksi.
 
-        System.out.println(mesaj.lastIndexOf("a")); //aramaya sagdan sola dogru yapar.buldugunda soldan saga dogru sayar.
+        System.out.println(mesaj.lastIndexOf("a")); //aramaya sagdan sola dogru yapar.buldugunda soldan saga dogru sayar.*/
+
+       String yeniMesaj= mesaj.replace(" ","-");
+       System.out.println(yeniMesaj);
+
+       System.out.println(mesaj.substring(4,9));
+
+        for (String kelime:mesaj.split(" ")) {System.out.println(kelime); //bosluklari dikkate alarak keser.
+
+        System.out.println(mesaj.toLowerCase());
+        System.out.println(mesaj.toUpperCase());
+        System.out.println(mesaj.trim());//basta sonda bosluk falan olursa onlari keser.
+        }
     }
 }
