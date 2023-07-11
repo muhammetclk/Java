@@ -19,7 +19,7 @@ public class Main {
                 sayi2Toplam+=j;
             }
         }
-       
+
         if(sayi1Toplam==sayi2 && sayi2Toplam==sayi1){
             System.out.println(sayi1+" ve"+sayi2+" arkadas sayilardir");
         }
