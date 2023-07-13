@@ -10,5 +10,7 @@ public class Main {
 	    ProductManager productManager=new ProductManager();
 	    productManager.Add(product);
 	    System.out.println(product.getKod());//kod icin set islemi yok fakat get islemi var.kod un readonly olmasini istedik.
+
+		Product product2=new Product(2,"Laptop","Hp laptop",10000,50);
     }
 }

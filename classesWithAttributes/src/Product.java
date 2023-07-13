@@ -1,4 +1,18 @@
 public class Product {
+
+    public Product(int id,String name,String description,double price,int stockAmount){
+        this.id=id;
+        this.name=name;
+        this.stockAmount=stockAmount;
+        this.description=description;
+        this.price=price;
+        System.out.println("Yapici metod calisti.");
+    }
+    public Product(){
+
+    }
+
+
     //public classta attributeler default olarak public tir.Private cekip getter ve setter ozelliklerini kullanicaz.
     private int id;
     private String name;
