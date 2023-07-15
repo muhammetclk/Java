@@ -6,8 +6,10 @@ public class Main {
 	    // interface lerde abstract gibi newlenemez.
         //ICustomerDal iCustomerDal=new ICustomerDal();
 
-        ICustomerDal customerDal=new MySqlCustomerDal();// interface onu implemente eden class in referansini tutuyor.Polymorphism
-        customerDal.add();
+       // ICustomerDal customerDal=new MySqlCustomerDal();// interface onu implemente eden class in referansini tutuyor.Polymorphism
+       //customerDal.add();
 
+        CustomerManager customerManager=new CustomerManager(new OracleCustomerDal());
+        customerManager.add();
     }
 }
