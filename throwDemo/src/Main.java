@@ -1,5 +1,6 @@
 public class Main {
 
+    //biz niye hata firlatiyoruz cunku bunu kullanicak  kullanici hatanin turune gore dogru aksiyon alsin diye.
     public static void main(String[] args)  {
         //throw ile bilincli olarak hata firlatiyoruz.
         //bir paket yazdik ve biz veya baska birisi bu paketi kullanicak
@@ -13,7 +14,7 @@ public class Main {
         try{
             manager.withdraw(90);
         }
-        catch (Exception exception){
+        catch (BalanceInsufficentException exception){
             System.out.println(exception.getMessage());
         }
 
