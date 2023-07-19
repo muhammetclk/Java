@@ -7,7 +7,15 @@ public class Main {
             int[] sayilar=new int[]{1,2,3};
             System.out.println(sayilar[5]);
         }
-        catch (Exception exception){
+        //hatalari turune gore bu sekilde yazdirabiliriz.Eger belirlediklerimize girmezse tum exceptionlarin base olan Exception calisir.
+        catch (ArrayIndexOutOfBoundsException exception){
+            System.out.println("Hata Olustu");
+            System.out.println(exception);
+        }catch (StringIndexOutOfBoundsException exception){
+            System.out.println("Hata Olustu");
+            System.out.println(exception);
+        }
+        catch (Exception exception) {
             System.out.println("Hata Olustu");
             System.out.println(exception);
         }
