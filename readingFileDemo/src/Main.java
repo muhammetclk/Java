@@ -22,7 +22,7 @@ public class Main {
         }
         finally {//olusturdugumuz readeri kaptmamiz lazim ama try blogunun icinde oldugunda ulasamiyoruz.
             //bu yuzden try icinde tanimlamizaz disarda tanimlicaz.
-            reader.close();// Dosyayi try da  okuyamazsa kapatilacak dosya olmayabilir o yuzden ilk denedigimizde yaptigimiz add exception to method signuture
+            reader.close();// Dosyayi try da  okuyamazsa kapatilacak dosya olmayabilir buda hata verir. o yuzden ilk denedigimizde yaptigimiz add exception to method signuture
             //islemini yapmaliyiz. Oda yukari throw IOException firtlatir.
             //veya finally icindeki islemi try catch icindede tanimlayabiliriz.
         }
