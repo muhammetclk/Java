@@ -1,14 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args)  {
         //getFileInfo();
-        readFile();
 
+        writeFile();
+        readFile();
     }
     public static void createFile(){
         File file=new File("D:\\javademos\\files\\students.txt");//dosyalari verdigimiz bu yola eklicez.
@@ -47,5 +46,20 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    public static void writeFile(){
+        try {
+            //FilwWriter i efektif kullanabilmemiz icin bunu bufferWriter icinde kullanmamiz gerekiyor.
+           // FileWriter fileWriter=new FileWriter("D:\\javademos\\files\\students.txt");
+            // mevcut seylerin uzerine yazar ekleme yapmaz.Fakat yolu verdigimiz yerin sionuna true dersek ekleme yapar.
+            BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter("D:\\javademos\\files\\students.txt",true));
+            bufferedWriter.newLine();//Eger bunu koymasaydik son yazilanin yanina yazicakti simdi alt satira gecip yazar.
+            bufferedWriter.write("Fine,thanks");
+            System.out.println("Dosyaya yazildi.");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
