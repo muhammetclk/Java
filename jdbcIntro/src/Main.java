@@ -1,6 +1,7 @@
 import javax.lang.model.element.Name;
 import java.net.ConnectException;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -17,9 +18,15 @@ public class Main {
             connection = helper.getConnection();
             statement=connection.createStatement();//gonderilecek sorgu bu baglantiya gidecek.
             resultSet=statement.executeQuery("Select Code,Name,Continent,Region from country");//sorguyu calistiracak.
+            ArrayList<Country> country=new ArrayList<Country>();
             while (resultSet.next()){//tek tek yaz anlamina geliyor.
-                System.out.println(resultSet.getString("Name"));//name alanini bas
+                country.add(new Country(
+                        resultSet.getString("Code"),
+                        resultSet.getString("Name"),
+                        resultSet.getString("Continent"),
+                        resultSet.getString("Region")));
             }
+            System.out.println(country.size());
         } catch (SQLException exception) {
             helper.showErrorMessage(exception);
         } finally {
