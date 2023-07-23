@@ -4,19 +4,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
-    static String userName="root";
-    static String password="12345";
-    static String dbUrl="jdbc:mysql://localhost:3306/world";
+
 
     public static void main(String[] args) throws SQLException {
-
+        dbHelper helper=new dbHelper();
         Connection connection=null;
         try{
-            //DriverManager class i bizi connector e bagliyor ve baglanti islemlerini yapiyor.
-            connection= DriverManager.getConnection(dbUrl,userName,password);
+
+            connection=helper.getConnection();
             System.out.println("Baglanti olustu");
         }catch (SQLException exception){
-            System.out.println(exception.getMessage());
+            helper.showErrorMessage(exception);
         }
         finally {
             connection.close();
