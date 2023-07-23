@@ -15,12 +15,12 @@ public class Main {
         Connection connection = null;
         try {
             connection = helper.getConnection();
-            String sql = "update city set population=80000,district='Duzce' where ID=?";
+            String sql = "delete from city where ID=?";
 
             statement = connection.prepareStatement(sql);
             statement.setInt(1,4084);
             statement.executeUpdate();//calistirir ve etkilenen kayit sayisini dondurur.
-            System.out.println("Kayit Guncellendi.");
+            System.out.println("Kayit silindi.");
 
         } catch (SQLException exception) {
             helper.showErrorMessage(exception);
@@ -78,6 +78,29 @@ public class Main {
             statement.setInt(4, 700000);
             statement.executeUpdate();//calistirir ve etkilenen kayit sayisini dondurur.
             System.out.println("Kayit eklendi.");
+
+        } catch (SQLException exception) {
+            helper.showErrorMessage(exception);
+        } finally {
+            connection.close();
+        }
+
+    }
+    static public void updateData() throws SQLException{
+        dbHelper helper = new dbHelper();
+        PreparedStatement statement = null;//insert islemleri PreparedStatemnt ile yapiliyor.Kullanci veriyi kendi girdigi icin.
+        ResultSet resultSet;
+
+
+        Connection connection = null;
+        try {
+            connection = helper.getConnection();
+            String sql = "update city set population=80000,district='Duzce' where ID=?";
+
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,4084);
+            statement.executeUpdate();//calistirir ve etkilenen kayit sayisini dondurur.
+            System.out.println("Kayit Guncellendi.");
 
         } catch (SQLException exception) {
             helper.showErrorMessage(exception);
